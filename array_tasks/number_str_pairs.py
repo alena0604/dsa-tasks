@@ -12,7 +12,7 @@
 from typing import List
 
 
-def maximumNumberOfStringPairs(words: List[str]) -> int:
+def maximum_number_of_string_pairs(words: List[str]) -> int:
     count = 0
     for i in range(0, len(words)):
         for j in range(i + 1, len(words)):
