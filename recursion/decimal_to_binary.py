@@ -1,5 +1,3 @@
-
-
 def decimal_binary(n):
     assert int(n) == n, "The number should be integer"
     if n == 0:
@@ -9,6 +7,3 @@ def decimal_binary(n):
 
 
 print(decimal_binary(10))
-
-
-

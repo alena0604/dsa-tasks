@@ -14,4 +14,4 @@ def count_k_difference(nums: List[int], k: int) -> int:
     return result
 
 
-print(count_k_difference([1,2,2,1], 1))
+print(count_k_difference([1, 2, 2, 1], 1))

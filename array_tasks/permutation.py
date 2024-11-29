@@ -1,5 +1,6 @@
 # check if two lists are permutations
 
+
 def check_permute(list_one, list_two):
     if len(list_one) != len(list_two):
         return "not permutation"
@@ -7,7 +8,9 @@ def check_permute(list_one, list_two):
     for i in list_one:
         if i in list_two:
             permute_list.append(i)
-    if len(set(permute_list)) == len(set(list_two)) and len(set(permute_list)) == len(set(list_one)):
+    if len(set(permute_list)) == len(set(list_two)) and len(set(permute_list)) == len(
+        set(list_one)
+    ):
         return "permutation"
     else:
         return "not permutation"

@@ -1,5 +1,3 @@
-
-
 def is_palindrome(s):
     # Base case: if the string is empty or has one character, it's a palindrome
     if len(s) <= 1:

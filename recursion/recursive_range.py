@@ -11,5 +11,4 @@ def recursive_range(n):
     return n + recursive_range(n - 1)
 
 
-
 print(recursive_range(1))

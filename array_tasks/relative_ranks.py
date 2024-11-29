@@ -13,7 +13,7 @@ def find_relative_ranks(score: List[int]) -> List[str]:
     return [dic_map[i] for i in score]
 
 
-print(find_relative_ranks([10,3,8,9,4]))
+print(find_relative_ranks([10, 3, 8, 9, 4]))
 
 
 def find_relative_ranks_v2(score: List[int]) -> List[str]:

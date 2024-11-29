@@ -9,7 +9,7 @@ def longest_common_prefix(strs: List[str]) -> str:
     prefix = strs[0]
 
     for substr in strs[1:]:
-        while substr[:len(prefix)] != prefix:
+        while substr[: len(prefix)] != prefix:
             prefix = prefix[:-1]
 
             if not prefix:

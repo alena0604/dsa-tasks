@@ -1,6 +1,6 @@
-#Duplicate Number
+# Duplicate Number
 
-#Write a function to remove the duplicate numbers on given integer array/list.
+# Write a function to remove the duplicate numbers on given integer array/list.
 
 # Example
 #

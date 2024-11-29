@@ -1,5 +1,4 @@
-
-#from GPT
+# from GPT
 def flatten(arr):
     result = []
 

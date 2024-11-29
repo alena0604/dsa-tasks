@@ -1,12 +1,9 @@
-
-
 def gcd(a, b):
     assert a >= 0 and int(a) == a and b >= 0 and int(b) == b, f"Incorrect value {a} {b}"
     if b == 0:
         return a
     else:
         return gcd(b, a % b)
-
 
 
 print(gcd(48, 18))

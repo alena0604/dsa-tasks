@@ -1,12 +1,15 @@
 # Write a program to find all pairs of integers whose sum is equal to a given number
 
+
 def find_pair(arr, sum):
     for i in range(len(arr)):
         for j in range(i + 1, len(arr)):
             if arr[i] + arr[j] == sum:
                 return arr[i], arr[j]
 
+
 # from leetcode
+
 
 def two_sum(nums, target):
     seen = {}

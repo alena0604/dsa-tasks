@@ -11,5 +11,4 @@ def prefix_count(words: List[str], pref: str) -> int:
     return count_w
 
 
-
-print(prefix_count(["pay","attention","practice","attend"], "at"))
+print(prefix_count(["pay", "attention", "practice", "attend"], "at"))

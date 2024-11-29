@@ -20,4 +20,3 @@ def maximum_number_of_string_pairs(words: List[str]) -> int:
                 count += 1
 
     return count
-

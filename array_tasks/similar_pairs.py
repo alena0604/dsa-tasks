@@ -18,11 +18,13 @@ def similar_pairs(words: List[str]) -> int:
     for word in words:
         frozen_s = frozenset(word)  # Convert to frozenset for unordered uniqueness
         if frozen_s in seen_set:
-            count_result += seen_set[frozen_s]  # Increment count for all previous occurrences
+            count_result += seen_set[
+                frozen_s
+            ]  # Increment count for all previous occurrences
             seen_set[frozen_s] += 1  # Update the count of this set
         else:
             seen_set[frozen_s] = 1
     return count_result
 
 
-print(similar_pairs(["aabb","ab","ba"]))
+print(similar_pairs(["aabb", "ab", "ba"]))

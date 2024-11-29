@@ -6,7 +6,7 @@ def search_range(nums: List[int], target: int) -> List[int]:
     result_index = [-1, -1]
 
     while left <= right:
-        mid = (left + right)//2
+        mid = (left + right) // 2
         if nums[mid] == target:
             print(nums[mid])
             result_index[0] = mid
@@ -31,4 +31,4 @@ def search_range(nums: List[int], target: int) -> List[int]:
     return result_index
 
 
-print(search_range([5,7,7,8,8,10], 8))
+print(search_range([5, 7, 7, 8, 8, 10], 8))

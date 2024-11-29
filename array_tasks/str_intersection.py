@@ -7,4 +7,4 @@ def find_the_difference(s: str, t: str) -> str:
     return ""
 
 
-print(find_the_difference(s = "a", t = "aa"))
+print(find_the_difference(s="a", t="aa"))
