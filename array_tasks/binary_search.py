@@ -7,7 +7,7 @@
 from typing import List
 
 
-def search(nums: List[int], target: int) -> int:
+def search_binary(nums: List[int], target: int) -> int:
     nums.sort()
     left, right = 0, len(nums) - 1
 

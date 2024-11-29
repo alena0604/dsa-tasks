@@ -3,9 +3,9 @@
 # copies of the substring together.
 
 
-def repeatedSubstringPattern(s: str) -> bool:
+def repeated_substring_pattern(s: str) -> bool:
     ss = (s + s)[1:-1]
     return s in ss
 
 
-print(repeatedSubstringPattern("aba"))
+print(repeated_substring_pattern("aba"))

@@ -5,7 +5,7 @@ from typing import List
 # From GPT
 
 
-def longestCommonPrefix(strs: List[str]) -> str:
+def longest_common_prefix(strs: List[str]) -> str:
     prefix = strs[0]
 
     for substr in strs[1:]:

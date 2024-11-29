@@ -1,7 +1,7 @@
 from typing import List
 
 
-def prefixCount(words: List[str], pref: str) -> int:
+def prefix_count(words: List[str], pref: str) -> int:
     prefix_lens = len(pref)
     count_w = 0
     for w in words:
@@ -12,4 +12,4 @@ def prefixCount(words: List[str], pref: str) -> int:
 
 
 
-print(prefixCount(["pay","attention","practice","attend"], "at"))
+print(prefix_count(["pay","attention","practice","attend"], "at"))
