@@ -27,6 +27,7 @@ class LinkedList:
         return result
 
     def append(self, value: int) -> None:
+        # insert at the end
         new_node = Node(value)  # O(1)
         if self.head is None:  # O(1)
             self.head = new_node  # O(1)
@@ -36,9 +37,21 @@ class LinkedList:
             self.tail = new_node  # O(1)
         self.length += 1  # O(1)
 
+    def prepend(self, value: int) -> None:
+        # insert node to the beginning
+        new_node = Node(value)  # O(1)
+        if self.head is None:  # O(1)
+            self.head = new_node  # O(1)
+            self.tail = new_node  # O(1)
+        else:
+            new_node.next = self.head  # O(1)
+            self.head = new_node  # O(1)
+        self.length += 1  # O(1)
+
 
 if __name__ == "__main__":
     new_linked_list = LinkedList()
     new_linked_list.append(10)
     new_linked_list.append(20)
+    new_linked_list.prepend(6)
     print(new_linked_list)
