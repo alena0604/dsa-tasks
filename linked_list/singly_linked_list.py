@@ -66,6 +66,11 @@ class LinkedList:
             temp_node.next = new_node
         self.length += 1
 
+    def traverse(self):
+        current = self.head
+        while current:
+            current = current.next
+
 
 if __name__ == "__main__":
     new_linked_list = LinkedList()
@@ -73,5 +78,5 @@ if __name__ == "__main__":
     new_linked_list.append(20)
     new_linked_list.prepend(6)
     print(new_linked_list)
-    new_linked_list.insert(2,3)
+    new_linked_list.insert(2, 3)
     print(new_linked_list)
