@@ -71,6 +71,14 @@ class LinkedList:
         while current:
             current = current.next
 
+    def search(self, target):
+        current = self.head
+        while current:
+            if current.value == target:
+                return True
+            current = current.next
+        return False
+
 
 if __name__ == "__main__":
     new_linked_list = LinkedList()
