@@ -9,9 +9,8 @@ result = 12
 
 def house_robber(nums):
     temp_ar = [0] * (len(nums) + 2)  # Create a storage list
-    for i in range(
-        len(nums) - 1, -1, -1
-    ):  # planning backward helps us know the best choice before we reach each house.
+    # planning backward helps us know the best choice before we reach each house.
+    for i in range(len(nums) - 1, -1, -1):
         temp_ar[i] = max(
             nums[i] + temp_ar[i + 2], temp_ar[i + 1]
         )  # Decide: Rob or Skip
