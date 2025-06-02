@@ -15,3 +15,19 @@ def count_k_difference(nums: List[int], k: int) -> int:
 
 
 print(count_k_difference([1, 2, 2, 1], 1))
+
+
+from collections import Counter
+
+
+def count_k_diff(nums: List[int], k: int) -> int:
+    counter = Counter(nums)
+    result = 0
+
+    for num in counter:
+        result += counter[num] * counter.get(num + k, 0)
+
+    return result
+
+
+print("Efficient", count_k_diff([1, 2, 2, 1], 1))
