@@ -11,6 +11,8 @@
 # Output:
 #     {1: 'a', 2: 'b', 3: 'c'}
 
+# {key_expr: value_expr for item in iterable}
+
 
 def reverse_dict(my_dict):
     return {v: k for k, v in my_dict.items()}
