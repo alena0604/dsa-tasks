@@ -79,12 +79,36 @@ class LinkedList:
             current = current.next
         return False
 
+    def get(self, index):
+        if index == -1:
+            return self.tail
+        if index < 0 and index >= self.length:
+            return None
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return current
+
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
+    def pop_first(self):
+        popped_node = self.head
+        self.head = self.head.next
+        popped_node.next = None
+        self.length -= 1
+        return popped_node
+
 
 if __name__ == "__main__":
     new_linked_list = LinkedList()
-    new_linked_list.append(10)
+    new_linked_list.prepend(10)
     new_linked_list.append(20)
     new_linked_list.prepend(6)
     print(new_linked_list)
-    new_linked_list.insert(2, 3)
+    print(new_linked_list.pop_first())
     print(new_linked_list)
