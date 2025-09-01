@@ -82,7 +82,7 @@ class LinkedList:
     def get(self, index):
         if index == -1:
             return self.tail
-        if index < 0 and index >= self.length:
+        if index < 0 or index >= self.length:
             return None
         current = self.head
         for _ in range(index):
@@ -153,6 +153,14 @@ class LinkedList:
             prev = current  # assign prev for the iteration
             current = nxt   # 
         self.head = prev
+
+     def find_middle(self):
+        fast = self.head
+        slow = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
 
 
 
