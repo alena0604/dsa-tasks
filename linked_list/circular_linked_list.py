@@ -13,6 +13,17 @@ class CSLinkedList:
         self.tail = None
         self.length = 0
 
+    def __str__(self) -> str:
+        temp_node = self.head
+        result = ""
+        while temp_node is not None:
+            result += str(temp_node.value)
+            temp_node = temp_node.next
+            if temp_node == self.head:
+                break
+            result += "->"
+        return result
+
     def append(self, value):
         new_node = Node(value)
         if self.length == 0:    # if it's empty node
