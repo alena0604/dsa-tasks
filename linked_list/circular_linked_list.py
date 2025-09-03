@@ -8,7 +8,7 @@ class Node:
 
 
 class CSLinkedList:
-    def __init__(self, value):
+    def __init__(self):
         self.head = None
         self.tail = None
         self.length = 0
@@ -34,4 +34,24 @@ class CSLinkedList:
             self.tail.next = new_node       # added at the end
             self.tail = new_node
             new_node.next = self.head
-        self.lenght += 1
+        self.length += 1
+
+    def prepend(self, value):
+        new_node = Node(value)
+        if not self.head:
+            self.head = new_node
+            self.tail = new_node
+            new_node.next = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+            self.tail.next = new_node
+        self.length += 1
+
+
+cs_linked_list = CSLinkedList()
+cs_linked_list.append(10)
+cs_linked_list.append(20)
+cs_linked_list.append(30)
+cs_linked_list.prepend(50)
+print(cs_linked_list)
