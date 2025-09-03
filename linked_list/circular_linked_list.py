@@ -48,10 +48,27 @@ class CSLinkedList:
             self.tail.next = new_node
         self.length += 1
 
+    def insert(self, index, value):
+        new_node = Node(value)
+        if index == 0:
+            self.prepend(value)
+        elif index == self.length:
+            self.tail.next = new_node
+            new_node.next = self.head
+            self.tail = new_node
+        else:
+            temp_node = self.head
+            for _ in range(index - 1):
+                temp_node = temp_node.next
+            new_node.next = temp_node.next
+            temp_node.next = new_node
+            self.length +=1
+
 
 cs_linked_list = CSLinkedList()
 cs_linked_list.append(10)
 cs_linked_list.append(20)
 cs_linked_list.append(30)
 cs_linked_list.prepend(50)
+cs_linked_list.insert(0, 3)
 print(cs_linked_list)
