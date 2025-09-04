@@ -6,6 +6,9 @@ class Node:
         self.value: int = value
         self.next: Optional[Node] = None  # Node or None for the end of the list
 
+    def __str__(self) -> str:
+        return str(self.value)  # Convert the value to a string
+
 
 class CSLinkedList:
     def __init__(self):
@@ -64,6 +67,39 @@ class CSLinkedList:
             temp_node.next = new_node
             self.length +=1
 
+    def traverse(self):
+        current = self.head
+        while current is not None:
+            print(current.value)
+            current = current.next
+            if current == self.head:
+                break
+
+    def search_node(self, target):
+        current = self.head
+        while current is not Node:
+            if current.value == target:
+                return True
+            current = current.next
+            if current == self.head:
+                break
+        return False
+
+    def get_node(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return current.value
+
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
 
 cs_linked_list = CSLinkedList()
 cs_linked_list.append(10)
@@ -71,4 +107,5 @@ cs_linked_list.append(20)
 cs_linked_list.append(30)
 cs_linked_list.prepend(50)
 cs_linked_list.insert(0, 3)
+print(cs_linked_list.search_node(30))
 print(cs_linked_list)
