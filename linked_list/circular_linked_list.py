@@ -132,6 +132,28 @@ class CSLinkedList:
         self.length -= 1
         return popped_node
 
+    def remove_node(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1 or index < -1:
+            return self.pop_node()
+        prev_node = self.get_node(index - 1)
+        popped_node = prev_node.next
+        prev_node.next = popped_node.next
+        popped_node.next = None
+        self.length -= 1
+        return popped_node
+
+    def delete_all(self):
+        if self.length == 0:
+            return
+        self.tail.next = None
+        self.head = None
+        self.tail = None
+        self.length = 0
+
 
 cs_linked_list = CSLinkedList()
 cs_linked_list.append(10)
