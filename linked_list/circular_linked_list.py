@@ -154,6 +154,32 @@ class CSLinkedList:
         self.tail = None
         self.length = 0
 
+    def delete_by_value(self, value):
+        if not self.head:
+            return None
+        if self.length == 1:
+            if self.head.value == value:
+                self.head = None
+                self.tail = None
+                self.length -=1
+                return True
+            return False
+        current = self.head
+        if self.head.value == value:
+            self.head = self.head.next
+            self.tail.next = self.head
+            self.length -= 1
+            return True
+        while current.next != self.head:
+            if current.next.value == value:
+                if current.next == self.tail:
+                    self.tail = current 
+                current.next = current.next.next
+                self.length -= 1
+                return True
+            current = current.next
+        return False
+
 
 cs_linked_list = CSLinkedList()
 cs_linked_list.append(10)
