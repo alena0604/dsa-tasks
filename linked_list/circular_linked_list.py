@@ -180,6 +180,16 @@ class CSLinkedList:
             current = current.next
         return False
 
+    def is_sorted(self):
+        if not self.head or not self.head.next:
+            return True
+        current = self.head
+        while current.next != self.head:
+            if current.value >= current.next.value:
+                return False
+            current = current.next
+        return True
+
 
 cs_linked_list = CSLinkedList()
 cs_linked_list.append(10)
