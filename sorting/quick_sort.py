@@ -19,3 +19,6 @@ def quick_sort(arr, low, high):
 arr = [2, 4, 7, 10, 7, 8, 9, 1, 5]
 quick_sort(arr, 0, len(arr) - 1)
 print(arr)
+
+
+# O(n log n) average, O(n²) worst
