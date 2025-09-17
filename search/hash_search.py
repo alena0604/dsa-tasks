@@ -5,5 +5,5 @@ def hash_search(arr, target):
 
 print(hash_search([2,5,3,7,4,5], 5))
 
-- Time: **O(1)** on average
-- Space: **O(n)**.
+# - Time: **O(1)** on average
+# - Space: **O(n)**.
