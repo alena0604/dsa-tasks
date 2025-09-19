@@ -25,6 +25,16 @@ class BinaryTree:
                 return "success"
         return "not found"
 
+    def preorder_traversal(self, index):
+        # Time O(n)
+        # Space O(n) - because recursive 
+        if index > self.last_used_index:
+            return
+        print(self.custome_list[index])
+        self.preorder_traversal(2*index)    # Time O(n/2)
+        self.preorder_traversal(2*index + 1)
+
+
 
 
 new_bt = BinaryTree(8)
