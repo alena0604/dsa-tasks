@@ -35,6 +35,27 @@ class BinaryTree:
         self.preorder_traversal(2*index + 1)
 
 
+    def in_order_traversal(self, index):
+        # left sub-tree -> root -> right sub-tree
+        # Time O(n)
+        # Space O(n) - because recursive 
+        if index > self.last_used_index:
+            return
+        self.in_order_traversal(2*index)    # Time O(n/2)
+        print(self.custome_list[index])
+        self.in_order_traversal(2*index + 1)
+
+    
+    def post_order_traversal(self, index):
+        # left sub-tree -> root -> right sub-tree
+        # Time O(n)
+        # Space O(n) - because recursive 
+        if index > self.last_used_index:
+            return
+        self.post_order_traversal(2*index)    # Time O(n/2)
+        self.post_order_traversal(2*index + 1)
+        print(self.custome_list[index])
+
 
 
 new_bt = BinaryTree(8)
