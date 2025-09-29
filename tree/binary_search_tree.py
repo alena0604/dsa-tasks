@@ -87,6 +87,13 @@ def search_node(root_node, node_value):
             search_node(root_node.right_child, node_value)
 
 
+def delete_bst(root_node):
+    root_node.data = None
+    root_node.left_child = None
+    root_node.right_child = None
+    return "The BST deleted"
+
+
 
 
 new_bst = BSTNode(None)
