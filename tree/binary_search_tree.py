@@ -52,11 +52,50 @@ def post_order_traversal(root_node):
     post_order_traversal(root_node.right_child)
     print(root_node.data)
 
+def level_order_traversal(root_node):
+    # Time O(n)
+    # Space O(n)
+    if not root_node:
+        return
+    else:
+        custom_queue = queue.Queue()
+        custom_queue.enqueue(root_node)
+        while not(custom_queue.is_empty()):
+            root = custom_queue.dequeue()
+            print(root.value.data)
+            if root.value.left_child is not None:
+                custom_queue.enqueue(root.value.left_child)
+            if root.value.right_child is not None:
+                custom_queue.enqueue(root.value.right_child)
+
+
+def search_node(root_node, node_value):
+     # Time O(logN)
+    # Space O(logN)
+    if root_node.data == node_value:
+        return "Found"
+    elif root_node.data > node_value:
+        if root_node.left_child.data == node_value:
+            return "Found"
+        else:
+            search_node(root_node.left_child, node_value)
+
+    else:
+        if root_node.right_child.data == node_value:
+            return "Found"
+        else:
+            search_node(root_node.right_child, node_value)
+
+
+
 
 new_bst = BSTNode(None)
 print(insert_node(new_bst, 40))
 print(insert_node(new_bst, 80))
 print(insert_node(new_bst, 10))
+print(insert_node(new_bst, 30))
+print(insert_node(new_bst, 5))
 print(new_bst.data)
 print(new_bst.left_child.data)
 print(new_bst.right_child.data)
+print(search_node(new_bst, 10))
