@@ -58,7 +58,7 @@ class BinaryTree:
 
     
     def level_order_traversal(self, index):
-          # Time O(n)
+        # Time O(n)
         # Space O(1)
         for i in range(index, self.last_used_index + 1):
             print(self.custome_list[i])
