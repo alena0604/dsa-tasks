@@ -65,9 +65,12 @@ def heapify_tree_extract(root_node, index, heap_type):
     right_index = index * 2 + 1
     swap_child = 0
 
+    # Case 1: No children
     if root_node.heap_size < left_index:
         return
-    elif root_node.heap_size == left_index:
+    
+    # Case 2: Only left child
+    if root_node.heap_size == left_index:
         if heap_type == "min":
             if root_node.custom_list[index] > root_node.custom_list[left_index]:
                 root_node.custom_list[index], root_node.custom_list[left_index] = root_node.custom_list[left_index], root_node.custom_list[index]
@@ -78,7 +81,7 @@ def heapify_tree_extract(root_node, index, heap_type):
             return
 
     else:
-        if root_node.custom_list[index] > root_node.custom_list[right_index]: 
+        if root_node.custom_list[left_index] > root_node.custom_list[right_index]: 
             swap_child = left_index
         else:
             swap_child = right_index
