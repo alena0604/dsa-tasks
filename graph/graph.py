@@ -24,6 +24,14 @@ class Graph:
             except ValueError:
                 pass
 
+    def remove_vertex(self, vertex):
+        if vertex in self.gdict.keys():
+            for ver in self.gdict[vertex]:
+                self.gdict[ver].remove(vertex)
+            del self.gdict[vertex]
+            return True
+        return False
+
 
 new_dict = {'a': ['b', 'c'], 'b': ['d']}
 
