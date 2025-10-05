@@ -17,6 +17,13 @@ class Graph:
         else:
             self.gdict[vertex] = [edge]
 
+    def remove_edge(self, vertex, edge):
+        if vertex in self.gdict:
+            try:
+                self.gdict[vertex].remove(edge)
+            except ValueError:
+                pass
+
 
 new_dict = {'a': ['b', 'c'], 'b': ['d']}
 
