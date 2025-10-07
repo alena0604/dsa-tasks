@@ -4,6 +4,8 @@
 
 # graph = defaultdict(list)
 
+from collection import deque 
+
 
 class Graph:
     def __init__(self, gdict=None):
@@ -31,6 +33,40 @@ class Graph:
             del self.gdict[vertex]
             return True
         return False
+
+    def bfs(self, vertex):
+        # Start from the node
+        # Visit and mark as visit
+        # Add all unvisited neighbours to queue
+        # Take vertex from the queue and repeat untill empty
+        visited = set()
+        visited.add(vertex)
+        queue = [vertex]    # from collection import deque  deque([vertex])- for time efficiency when pop element
+        while queue:
+            vertex = queue.pop(0)       # vertext = queue.popleft()
+            if vertex not in visited:
+                visited.append(vertex)
+                for neighbours in self.gdict[vertex]:
+                    if neighboursnot in visited:
+                        queue.append(neighbours)
+
+        return visited
+
+
+    def bfs_search(self, vertex):
+        # Time O(V+E)
+        # Space O(V)
+        visited = set()
+        visited.add(vertex)
+        queue = deque([vertex])    #  deque([vertex])- for time efficiency when pop element
+        while queue:    # O(V)
+            current_vertex = queue.popleft()
+            for neighbours in self.gdict[current_vertex]:   # O(E)
+                if neighbours not in visited:
+                    visited.add(neighbours)
+                    queue.append(neighbours)
+
+        return visited
 
 
 new_dict = {'a': ['b', 'c'], 'b': ['d']}
