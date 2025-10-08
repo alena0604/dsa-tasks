@@ -31,7 +31,7 @@ class Graph:
 
 
 # Time O(V + E)
-# Space O(V)
+# Space O(V + E)
 
 
 g = Graph(4)
