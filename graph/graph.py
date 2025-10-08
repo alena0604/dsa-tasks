@@ -4,7 +4,7 @@
 
 # graph = defaultdict(list)
 
-from collection import deque 
+from collections import deque
 
 
 class Graph:
@@ -54,6 +54,7 @@ class Graph:
 
 
     def bfs_search(self, vertex):
+        # prefered method
         # Time O(V+E)
         # Space O(V)
         visited = set()
@@ -68,9 +69,27 @@ class Graph:
 
         return visited
 
+    def dfs_search(self, vertex):
+        # Time O(V+E)
+        # Space O(V)
+        visited = set()
+        order = []
+        stack = [vertex]
+        while stack:
+            current_vertex = stack.pop()
+            if current_vertex not in visited:
+                visited.add(current_vertex)
+                order.append(current_vertex)
+            for neighbour in self.gdict[current_vertex]:
+                if neighbour not in visited:
+                    stack.append(neighbour)
+        return order
 
-new_dict = {'a': ['b', 'c'], 'b': ['d']}
+
+new_dict = {'a': ['b', 'c'], 'b': ['a', 'd'], 'c':['a'], 'd': ['b']}
 
 graph = Graph(new_dict)
 print(graph.gdict)
+print(graph.dfs_search("a"))
+print(graph.bfs_search("a"))
     
