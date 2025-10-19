@@ -32,6 +32,15 @@ class Graph:
         return distances, previous
 
 
+def reconstruct_path(previous, start, end):
+    if end not in previous and end != start:
+        return None
+    path = [end]
+    while path[-1] != start:
+        path.append(previous[path[-1]])
+    return list(reversed(path))
+
+
 g = Graph()
 g.add_edge('A', 'B', 1)
 g.add_edge('A', 'C', 4)
@@ -40,7 +49,8 @@ g.add_edge('B', 'D', 6)
 g.add_edge('C', 'D', 3)
 
 distances, previous = g.dijkstra('A')
-print(distances)
+print(distances)   # {'A':0,'B':1,'C':3,'D':6}
+print(reconstruct_path(prev, 'A', 'D'))  # ['A','B','C','D']
 
 # {
 #   'A': [('B', 1), ('C', 4)],
