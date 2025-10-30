@@ -13,3 +13,17 @@ def number_ways(n):
 
 
 print(number_ways(5))
+
+
+# Divide and conquer
+
+def number_factor(n):
+    if n in (0, 1, 2):
+        return 1
+    elif n == 3:
+        return 2
+    else:
+        return number_factor(n-1) + number_factor(n-3) + number_factor(n-4)
+
+
+print(number_factor(8))
