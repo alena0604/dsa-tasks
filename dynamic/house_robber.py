@@ -19,3 +19,21 @@ def house_robber(nums):
 
 
 print(house_robber(nums))
+
+
+# Top Down with memory
+def house_robber_td(arr, curr_index, temp_dict):
+    if curr_index >= len(arr):
+        return 0
+    else:
+        if curr_index not in temp_dict:
+            first_case = arr[curr_index] + house_robber_td(arr, curr_index + 2, temp_dict)
+            second_case = house_robber_td(arr, curr_index + 1, temp_dict)
+            temp_dict[curr_index] = max(first_case, second_case)
+        return temp_dict[curr_index]
+
+
+print(house_robber_td(nums, 0, {}))
+
+
+
