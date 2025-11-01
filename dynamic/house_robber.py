@@ -36,4 +36,12 @@ def house_robber_td(arr, curr_index, temp_dict):
 print(house_robber_td(nums, 0, {}))
 
 
+# Bottom up
+def house_robber_bu(arr):
+    temp_arr = [0] * (len(arr) + 2)
+    for i in range(len(arr) - 1, -1, -1):
+        temp_arr[i] = max(arr[i] + temp_arr[i + 2], temp_arr[i + 1])
+    return temp_arr[0]
 
+
+print(house_robber_bu(nums))
