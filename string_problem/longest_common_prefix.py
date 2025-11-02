@@ -1,4 +1,5 @@
 def longest_common_prefix(strs):
+    """Find the longest common prefix among strings."""
     if not strs:
         return ""
     prefix = strs[0]
