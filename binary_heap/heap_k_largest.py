@@ -7,13 +7,13 @@ class KthLargest:
     def __init__(self, nums, k):
         self.min_heap = nums
         self.k = k
-        heapq.heapify(self.min_heap)
+        heapq.heapify(self.min_heap)    # O(n)
 
         while len(self.min_heap) > k:
             heapq.heappop(self.min_heap)
 
     def add_value(self, value):
-        heapq.heappush(self.min_heap, value)
+        heapq.heappush(self.min_heap, value)    # O(n log n)
 
         if len(self.min_heap) > self.k:
             heapq.heappop(self.min_heap)
