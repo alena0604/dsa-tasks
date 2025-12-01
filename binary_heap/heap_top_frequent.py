@@ -9,7 +9,7 @@ def top_frequent_items(arr, n):
     min_heap = []
 
     for key, value in counter_freq.items():
-        heapq.heappush(min_heap, (value, key))
+        heapq.heappush(min_heap, (value, key)) # Each heappush O(log n) => total O (n log n)
 
         if len(min_heap) > n:
             heapq.heappop(min_heap)
