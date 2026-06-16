@@ -16,16 +16,16 @@ def dfs(adj, node, cloned):
         cloned[node].append(neighbour)
 
 
-def deep_copy_bfs(adj: dict[int: list[int]], start):
+def deep_copy_bfs(adj: dict[int, list[int]], start):
     cloned = {start: []}
-    queue = deque(start)
+    queue = deque([start])
     while queue:
         node = queue.popleft()
         for neighbour in adj[node]:
             if neighbour not in cloned:
                 cloned[neighbour] = []
                 queue.append(neighbour)
-            cloned[neighbour].append(node)
+            cloned[node].append(neighbour)
     return cloned
 
 
