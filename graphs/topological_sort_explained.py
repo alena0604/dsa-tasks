@@ -13,7 +13,7 @@ def topological_sort_kahn(graph, n):
     # STEP 1: COUNT in-degrees
     in_degree = [0] * n
     for node in range(n):
-        for neighbor in graph[node]:
+        for neighbor in graph.get(node, []):
             in_degree[neighbor] += 1
 
     # STEP 2: SEED push all in-degree 0 nodes
@@ -37,3 +37,14 @@ def topological_sort_kahn(graph, n):
     if len(result) != n:
         return []
     return result
+
+graph = {
+ 0: [1,2],
+ 1: [3,4],
+ 2: [5,6],
+ 3: [],
+ 4: [],
+ 5: [],
+ 6: []
+}
+print(topological_sort_kahn(graph, len(graph)))
