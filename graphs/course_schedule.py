@@ -9,7 +9,7 @@ def course_schedule(n_courses, prerequisites):
     graph = defaultdict(list)
 
     for course, prereqs in prerequisites:
-        graph[prereqs].append(course)
+        graph[prereqs].append(course)   # prerequisite → course
         in_degree[course] += 1
 
     queue = deque(i for i in range(n_courses) if in_degree[i] == 0)
