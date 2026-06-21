@@ -17,10 +17,7 @@ def topological_sort_kahn(graph, n):
             in_degree[neighbor] += 1
 
     # STEP 2: SEED push all in-degree 0 nodes
-    queue = deque()
-    for i in range(n):
-        if in_degree[i] == 0:
-            queue.append(i)
+    queue = deque([i for i in range(n) if in_degree[i] == 0])
 
     # STEP 3 & 4: POP + PRUNE
     result = []
